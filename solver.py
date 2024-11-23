@@ -22,12 +22,12 @@ with open("formatted_questions.json", "r") as f:
 
 # Reduce dataset size to 10%
 random.seed(42)
-formatted_dataset = random.sample(formatted_dataset, int(len(formatted_dataset) * 0.01))
+formatted_dataset = random.sample(formatted_dataset, int(len(formatted_dataset) * 1))
 print(f"Reduced dataset size: {len(formatted_dataset)}")
 
 # Split data
-train_data, test_valid_data = train_test_split(formatted_dataset, test_size=0.2, random_state=42)
-valid_data, test_data = train_test_split(test_valid_data, test_size=0.5, random_state=42)
+train_data, test_valid_data = train_test_split(formatted_dataset, test_size=0.3, random_state=42)
+valid_data, test_data = train_test_split(test_valid_data, test_size=1/3, random_state=42)
 
 print(f"Training set size: {len(train_data)}")
 print(f"Validation set size: {len(valid_data)}")
