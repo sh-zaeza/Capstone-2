@@ -22,7 +22,7 @@ with open("formatted_questions.json", "r") as f:
 
 # Reduce dataset size to 10%
 random.seed(42)
-formatted_dataset = random.sample(formatted_dataset, int(len(formatted_dataset) * 0.1))
+formatted_dataset = random.sample(formatted_dataset, int(len(formatted_dataset) * 0.01))
 print(f"Reduced dataset size: {len(formatted_dataset)}")
 
 # Split data
